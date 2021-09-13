@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float a;
+    scanf("%f",&a);     //вещественныe
+    printf("%f",a);
+
+    char str[10];
+    scanf("%s",&str);     //строка
+    printf("%s",str);
+
+ return 0;
+}
