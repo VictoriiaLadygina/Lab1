@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+    float a;
+    float z1, z2;
+    scanf("%f",&a);
+    z1=(1-2*pow(sin(a),2))/(1+sin(2*a));
+    z2=(1-tan(a))/(1+tan(a));
+    printf("%f\n",z1);
+    printf("%f",z2);
+  return 0;
+}
