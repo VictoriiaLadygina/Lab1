@@ -1,16 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-const int P = 3.14;
+#define _USE_MATH_DEFINES
+
 int main()
 {
+
+//buitify
     float a;
     float z1, z2;
-    scanf("%f",&a);
-    a = (180 * a) / P;
-    z1=(1-2*pow(sin(a),2))/(1+sin(2*a));
-    z2=(1-tan(a))/(1+tan(a));
-    printf("%f\n",z1);
-    printf("%f",z2);
+    scanf("%f", &a);
+    a = (180 * a) / M_PI;
+    z1 = (1- 2 * pow(sin(a), 2)) / (1 + sin(2 * a));
+    z2 = (1 - tan(a)) / (1 + tan(a));
+    printf("%f\n", z1);
+    printf("%f", z2);
   return 0;
 }
