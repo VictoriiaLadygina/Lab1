@@ -7,9 +7,11 @@ int main()
     scanf("%f",&a);     //вещественныe
     printf("%f",a);
 
-    char str[10];
-    scanf("%s",&str);     //строка
-    printf("%s",str);
+   char str[10] = "";
+   printf("");
+   fgets(str, 10, stdin);      //строка
+   printf("");
+   puts(str);
 
  return 0;
 }
