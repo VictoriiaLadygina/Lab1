@@ -1,17 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 int main()
 {
     float a;
-    scanf("%f",&a);     //вещественныe
-    printf("%f",a);
-
-   char str[10] = "";
-   printf("");
-   fgets(str, 10, stdin);      //строка
-   printf("");
-   puts(str);
-
+    char str[10] = "";
+    scanf("%f\n",&a);     //для вещественных
+    scanf("%[^\n]s", &str);    //строка
+    printf("%f\n",a);
+    printf("%s", str);
  return 0;
 }
