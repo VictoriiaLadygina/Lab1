@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int a;
+    int b;
+    scanf("%d", &a);
+    scanf("%o", &b);
+    printf("%x\n", a);
+    printf("%o\n", a);
+    printf("%o\n", a << 3);
+    printf("%o\n", ~a);
+    printf("%o\n", b & a);
+    return 0;
+}
+
