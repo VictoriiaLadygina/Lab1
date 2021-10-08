@@ -5,13 +5,19 @@ int main()
 {
     int a;
     int b;
+    printf("enter number a in 10s\n");
     scanf("%d", &a);
+    printf("enter number b in 8s\n");
     scanf("%o", &b);
+    printf("your number a in 16s\n");
     printf("%x\n", a);
+    printf("your number b in 8s\n");
     printf("%o\n", a);
+    printf("your number a << 3\n");
     printf("%o\n", a << 3);
-    printf("%o\n", ~a);
+    printf("your number ~ a\n");
+    printf("%o\n", ~ a);
+    printf("your number b & a\n");
     printf("%o\n", b & a);
     return 0;
 }
-
