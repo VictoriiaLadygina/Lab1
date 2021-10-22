@@ -1,11 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <malloc.h>
 int main()
 {
     char arr[4] = {'a', 'b', 'c', 'd'};
-    char *p = arr;
-    char *k = arr;
+    char *p;
+    char *k;
+    p = arr;
+    k = (char*)malloc(4 * sizeof(int));
+    char *s = (char*)realloc(k, 4 * sizeof(int));
+
     for (int i = 0; i < 4; i++ )
     {
         printf("%c ", *(p + i));
@@ -14,16 +18,21 @@ int main()
     //free
     for (int i = 0; i < 4; i++ )
     {
-        printf("%c ", *(k + i));
+        k[i] = arr[i];
+        s[i] = arr[i];
+    }
+    for (int i = 0; i < 4; i++ )
+    {
+        printf("%c ", k[i]);
     }
     printf("\n");
-    free(*k);
-    //проверка на освобождение памяти
-    /*for (int i = 0; i < 4; i++ )
+    //дополнительное задание
+    for (int i = 0; i < 4; i++ )
     {
-        printf("%c ", *(k + i));
-    }*/
-
+        printf("%c ", s[i]);
+    }
+    printf("\n");
+    free(k);
 
     return 0;
 }
