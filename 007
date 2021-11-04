@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+enum day {Monday, Tuesday, Wenesday, Thusday, Friday, Saturday, Sunday};
+
+struct sqr
+{
+	int x[2];
+	int y[2];
+	int z[2];
+	int a[2];
+
+} sqr;
+
+struct computer
+{
+    unsigned NumLock:1;
+    unsigned CapsLock:1;
+    unsigned ScrollLock:1;
+};
+
+union keyboard
+{
+    struct computer conditions;
+    int put;
+};
+int main()
+{
+    printf("%d\n", Monday + 1);
+    struct sqr  coordinate = {.x = {0, 0}, .y = {0, 2}, .z = {2, 2}, .a = {2, 0} };
+    int P = (coordinate.y[1] - coordinate.x[1]) * 4;
+    printf("%d\n",P);
+    union keyboard play;
+    int x;
+    scanf("%x", &x);
+    play.put = x;
+    printf("%d\n", play.conditions.NumLock);
+
+
+
+    return 0;
+}
