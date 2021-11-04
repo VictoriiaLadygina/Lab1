@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char* argv[])
+{
+    char str1[100];
+    char str2[100];
+    char str3[200];
+    char c;
+    int n = 0;
+    printf("enter string 1\n");
+    scanf(" %[^\n]s", &str1);
+    printf("enter string 2\n");
+    scanf(" %[^\n]s", &str2);
+    printf("enter n\n");
+    scanf(" %d", &n);
+
+
+    printf("Ex 1\n");
+    strncat(str1, str2, n);    //конкатенация (сложение) первой строки и n начальных символов второй строки.
+    printf("%s\n ", str1);
+
+    printf("Ex 3\n");
+    if (strncmp(str1, str2, n) == 0)
+    {
+        printf("found\n"); //сравнение первых n символов двух строк.
+    }
+    else
+    {
+         printf("sorry not found\n");
+    }
+
+    printf("Ex 6\n");
+    strncpy(str1, str2, n);    //!копирование первых n символов одной строки в другую строку.
+    printf("%s \n", str1);
+
+    printf("Ex 11\n");
+    int length;
+	length = strspn(str1, str2);                 // //длина отрезка одной строки, содержащего символы из множества символов, входящих во вторую строку.
+	printf("Character where strings differ is at position %d\n", length);
+      
+
+    printf("Ex 13\n");
+    char * pch = strtok (str1," ,.-");   //лексемы, входящих во вторую строку.
+    while (pch != NULL)
+    {
+       printf("%s ", pch);
+       pch = strtok (NULL, " ,.-");
+    }
+
+
+    return 0;
+}
