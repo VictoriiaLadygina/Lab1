@@ -5,8 +5,7 @@ int main(int argc, char* argv[])
 {
     char str1[100];
     char str2[100];
-    char str3[200];
-    char c;
+    char c[100];
     int n = 0;
     printf("enter string 1\n");
     scanf(" %[^\n]s", &str1);
@@ -14,6 +13,8 @@ int main(int argc, char* argv[])
     scanf(" %[^\n]s", &str2);
     printf("enter n\n");
     scanf(" %d", &n);
+    scanf(" %[^\n]s", &c);
+
 
 
     printf("Ex 1\n");
@@ -31,22 +32,24 @@ int main(int argc, char* argv[])
     }
 
     printf("Ex 6\n");
-    strncpy(str1, str2, n);    //!копирование первых n символов одной строки в другую строку.
+    strncpy(str1, str2, n);    //копирование первых n символов одной строки в другую строку.
     printf("%s \n", str1);
 
     printf("Ex 11\n");
     int length;
-	length = strspn(str1, str2);                 // //длина отрезка одной строки, содержащего символы из множества символов, входящих во вторую строку.
+	length = strspn(str1, str2);                 // //длина отрезка одной строки, содержащего символы из множества символов,
+	                                                                                  //входящих во вторую строку.
 	printf("Character where strings differ is at position %d\n", length);
-      
+
 
     printf("Ex 13\n");
-    char * pch = strtok (str1," ,.-");   //лексемы, входящих во вторую строку.
+    char * pch = strtok(str2, c);   //лексемы, входящих в первую строку.
     while (pch != NULL)
     {
-       printf("%s ", pch);
-       pch = strtok (NULL, " ,.-");
+       printf("%s\n", pch);
+       pch = strtok(NULL, c);
     }
+
 
 
     return 0;
