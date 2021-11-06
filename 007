@@ -25,17 +25,27 @@ union keyboard
     struct computer conditions;
     int put;
 };
+
+int P(int x)
+{
+    return x * 4;
+}
+
 int main()
 {
+    int a;
     printf("%d\n", Monday + 1);
     struct sqr  coordinate = {.x = {0, 0}, .y = {0, 2}, .z = {2, 2}, .a = {2, 0} };
-    int P = (coordinate.y[1] - coordinate.x[1]) * 4;
-    printf("%d\n",P);
+    a = coordinate.y[1] - coordinate.x[1];
+
+    printf("%d\n",P(a));
     union keyboard play;
     int x;
     scanf("%x", &x);
     play.put = x;
-    printf("%d\n", play.conditions.NumLock);
+    printf("NumLock: %d\n", play.conditions.NumLock);
+    printf("CapsLock: %d\n", play.conditions.CapsLock);
+    printf("ScrollLock: %d\n", play.conditions.ScrollLock);
 
 
 
