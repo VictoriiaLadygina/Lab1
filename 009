@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define LIMIT 499
+
+int main()
+{
+    char str[100];
+    char *c = str;
+    int count1 = 0;
+    int count2 = 0;
+    int count3 = 0;
+
+
+    int value = 0;
+    int over_value = 0;
+    int duration = 0;
+    int sum = 0;
+
+    printf("enter string\n");
+    gets(str);
+
+    printf("Enter value \n");
+    scanf("%d", &value);
+     printf("Enter value1 \n");
+    scanf("%d", &over_value);
+     printf("Enter duration \n");
+    scanf("%d", &duration);
+
+    while (*c != '\0')
+    {
+        if (isdigit(*c))
+        {
+            count1++;
+        }
+        if (islower(*c))
+        {
+            count2++;
+        }
+        if (isupper(*c))
+        {
+            count3++;
+        }
+       c++;
+    }
+    printf("count of numbers: %d\n", count1);
+    printf("count of letters from a to z: %d\n", count2);
+    printf("count of letters from A to Z: %d\n", count3);
+
+
+    if (duration > LIMIT)
+    {
+        sum = LIMIT * value + (duration - LIMIT) * over_value;
+    }
+    printf("your total sum is %d\n", sum);
+
+
+    return 0;
+}
