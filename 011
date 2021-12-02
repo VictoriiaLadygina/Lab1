@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+struct rec
+{
+	int x[2];
+	int y[2];
+	int z[2];
+	int a[2];
+
+} rec;
+
+
+int P(int a, int b)
+{
+    return (a + b) * 2;;
+}
+
+int S (int a, int b)
+{
+    return a * b;
+}
+
+int main()
+{
+    int a, b;
+    int Ax, Ay, Bx, By, Cx, Cy, Dx, Dy;
+    printf("Ax = ");
+    scanf("%d", &Ax);
+    printf("Ay = ");
+    scanf("%d", &Ay);
+    printf("Bx = ");
+    scanf("%d", &Bx);
+    printf("By = ");
+    scanf("%d", &By);
+    printf("Cx = ");
+    scanf("%d", &Cx);
+    printf("Cy = ");
+    scanf("%d", &Cy);
+    printf("Dx = ");
+    scanf("%d", &Dx);
+    printf("Dy = ");
+    scanf("%d", &Dy);
+    struct rec coordinate = {.x = {Ax, Ay}, .y = {Bx, By}, .z = {Cx, Cy}, .a = {Dx, Dy} };
+    a = abs(coordinate.y[1] - coordinate.x[1]);
+    b = abs(coordinate.y[2] - coordinate.a[2]);
+    printf("Square of rectangle = %d\n", S(a, b));
+    printf("Perimeter of rectangle = %d\n", P(a, b));
+
+    return 0;
+}
