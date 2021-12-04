@@ -13,7 +13,7 @@ char * settime(struct tm *u)
   {
       s[i] = 0;
   }
-  int length = strftime(s, 40, "%d.%m.%Y %H:%M:%S, %A", u);
+  int length = strftime(s, 40, "%d.%m", u);
   tmp = (char*)malloc(sizeof(s));
   strcpy(tmp, s);
   return(tmp);
@@ -24,7 +24,6 @@ int main()
     FILE *file = fopen("writing.out", "w");
     system("chcp 1251");
     system("cls");
-
     struct tm *u;
     char *f;
     const time_t timer = time(NULL);
@@ -50,5 +49,6 @@ int main()
     }
 
     fclose(file);
+
     return 0;
 }
