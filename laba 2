@@ -1,0 +1,168 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+#include <math.h>
+
+using namespace std;
+
+class complex
+{
+    public:
+        complex();
+        double modul(double, double);
+        double subd(double, double, double);
+        double sub(double, double, double, double);
+        double sum(double, double, double,double);
+
+    private:
+        double x;  //мнимая часть
+        double y;  //действительная часть
+        double z;  //вещ число
+        double x1; //мнимая часть 2 числа
+        double y1; //действительная часть 2 числа
+
+void show_complex(double, double);
+};
+
+
+
+
+
+complex::complex()
+{
+    /*cout <<"Введите мнимую и действительную часть комплексного числа:" << endl;
+    cin >> x;
+    cin >> y;
+    cin >> z;
+    cin >> x1;
+    cin >> y1;
+    show_complex();*/
+}
+
+
+double complex::modul(double x, double y)      //длина
+{
+    return pow(x * x + y * y, 0.5);
+}
+
+
+double complex::subd(double x, double y, double z) //умножение на вещ число
+{
+    x = x * z;
+    y = y * z;
+    show_complex(x, y);
+
+}
+
+double complex::sum(double x, double y, double x1, double y1) //сложение 2 комплексных чисел
+{
+    x = x + x1;
+    y = y + y1;
+    show_complex(x, y);
+
+}
+
+
+double complex::sub(double x, double y, double x1, double y1) //умножение 2 комплексных чисел
+{
+    x = x * x1;
+    y = y * y1;
+    show_complex(x, y);
+
+}
+
+
+void complex::show_complex(double x, double y) //вывод
+{
+    if (y >= 0)
+    {
+        cout << x << "+" << y << "i" << endl;
+    }
+    else
+    {
+        cout<< x << y << "i" <<endl;
+    }
+}
+
+
+
+
+
+int prompt_menu_item()
+{
+    int variant;
+    cout << "Выберите вариант\n" << endl;
+    cout << "1. Длина\n"
+         << "2. Умножение на вещественное число\n"
+         << "3. Сложение 2 комплексных чисел\n"
+         << "4. Умножение 2 комплексных чисел\n"
+         << "5. Выход\n" << endl;
+    cout << ">";
+    cin >> variant;
+    return variant;
+}
+
+int main(int argc, char* argv[])
+{
+
+    setlocale(LC_ALL, "Russian");
+    int variant;
+    complex c;
+    double x, y, x1, y1, z;
+
+do
+{
+    variant = prompt_menu_item();
+    switch (variant)
+    {
+        case 1:
+            cout << "Введите действительную и мнимую часть комплексного числа " << endl;
+            cin >> x;
+            cin >> y;
+            cout << "Длина комплексного числа: " << c.modul(x, y) << endl;
+            break;
+        case 2:
+            cout << "Введите действительную и мнимую часть комплексного числа " << endl;
+            cin >> x;
+            cin >> y;
+            cout << "Введите вещественное число " << endl;
+            cin >> z;
+            cout << "Умножение на вещественное число: " << endl;
+            c.subd(x, y, z);
+            break;
+        case 3:
+            cout << "Введите действительную и мнимую часть первого комплексного числа " << endl;
+            cin >> x;
+            cin >> y;
+            cout << "Введите действительную и мнимую часть второго комплексного числа " << endl;
+            cin >> x1;
+            cin >> y1;
+            cout << "Сумма двух комплексных чисел: " << endl;
+            c.sum(x, y, x1, y1);
+            break;
+        case 4:
+            cout << "Введите действительную и мнимую часть первого комплексного числа " << endl;
+            cin >> x;
+            cin >> y;
+            cout << "Введите действительную и мнимую часть второго комплексного числа " << endl;
+            cin >> x1;
+            cin >> y1;
+            cout << "Умножение двух комплексных чисел: " << endl;
+            c.sub(x, y, x1, y1);
+            break;
+        case 5:
+            cout << "Выход" << endl;
+            exit(EXIT_SUCCESS);
+            break;
+        default:
+            cerr << "Вы выбрали неверный вариант" << endl;
+            exit(EXIT_FAILURE);
+    }
+    if (variant != 5) system("pause");
+}
+while (variant != 5);
+
+
+    return 0;
+}
+
