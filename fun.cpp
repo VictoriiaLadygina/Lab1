@@ -2,14 +2,14 @@
 
 namespace core
 {
-    void core1(Square *square, std::vector<double> *vector1)
+    void core1(float *a, float *b)
     {
-        square->x += vector1->at(0);
-        square->y += vector1->at(1);
+        *a += *b;
     }
-    void core2(Square &square, std::vector<double> &vector1)
+    void core2(float &a, float &b)
     {
-        square.x += vector1.at(0);
-        square.y += vector1.at(1);
+        a += b;
     }
 }
+
+
